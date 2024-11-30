@@ -1,0 +1,187 @@
+hi NvimInternalError ctermfg=Red ctermbg=Red guifg=Red guibg=Red
+
+" Highlight groups (links) used by parser:
+
+hi default link NvimAssignment Operator
+hi default link NvimPlainAssignment NvimAssignment
+hi default link NvimAugmentedAssignment NvimAssignment
+hi default link NvimAssignmentWithAddition NvimAugmentedAssignment
+hi default link NvimAssignmentWithSubtraction NvimAugmentedAssignment
+hi default link NvimAssignmentWithConcatenation NvimAugmentedAssignment
+
+hi default link NvimOperator Operator
+
+hi default link NvimUnaryOperator NvimOperator
+hi default link NvimUnaryPlus NvimUnaryOperator
+hi default link NvimUnaryMinus NvimUnaryOperator
+hi default link NvimNot NvimUnaryOperator
+
+hi default link NvimBinaryOperator NvimOperator
+hi default link NvimComparison NvimBinaryOperator
+hi default link NvimComparisonModifier NvimComparison
+hi default link NvimBinaryPlus NvimBinaryOperator
+hi default link NvimBinaryMinus NvimBinaryOperator
+hi default link NvimConcat NvimBinaryOperator
+hi default link NvimConcatOrSubscript NvimConcat
+hi default link NvimOr NvimBinaryOperator
+hi default link NvimAnd NvimBinaryOperator
+hi default link NvimMultiplication NvimBinaryOperator
+hi default link NvimDivision NvimBinaryOperator
+hi default link NvimMod NvimBinaryOperator
+
+hi default link NvimTernary NvimOperator
+hi default link NvimTernaryColon NvimTernary
+
+hi default link NvimParenthesis Delimiter
+hi default link NvimLambda NvimParenthesis
+hi default link NvimNestingParenthesis NvimParenthesis
+hi default link NvimCallingParenthesis NvimParenthesis
+
+hi default link NvimSubscript NvimParenthesis
+hi default link NvimSubscriptBracket NvimSubscript
+hi default link NvimSubscriptColon NvimSubscript
+hi default link NvimCurly NvimSubscript
+
+hi default link NvimContainer NvimParenthesis
+hi default link NvimDict NvimContainer
+hi default link NvimList NvimContainer
+
+hi default link NvimIdentifier Identifier
+hi default link NvimIdentifierScope NvimIdentifier
+hi default link NvimIdentifierScopeDelimiter NvimIdentifier
+hi default link NvimIdentifierName NvimIdentifier
+hi default link NvimIdentifierKey NvimIdentifier
+
+hi default link NvimColon Delimiter
+hi default link NvimComma Delimiter
+hi default link NvimArrow Delimiter
+
+hi default link NvimRegister SpecialChar
+hi default link NvimNumber Number
+hi default link NvimFloat NvimNumber
+hi default link NvimNumberPrefix Type
+
+hi default link NvimOptionSigil Type
+hi default link NvimOptionName NvimIdentifier
+hi default link NvimOptionScope NvimIdentifierScope
+hi default link NvimOptionScopeDelimiter NvimIdentifierScopeDelimiter
+
+hi default link NvimEnvironmentSigil NvimOptionSigil
+hi default link NvimEnvironmentName NvimIdentifier
+
+hi default link NvimString String
+hi default link NvimStringBody NvimString
+hi default link NvimStringQuote NvimString
+hi default link NvimStringSpecial SpecialChar
+
+hi default link NvimSingleQuote NvimStringQuote
+hi default link NvimSingleQuotedBody NvimStringBody
+hi default link NvimSingleQuotedQuote NvimStringSpecial
+
+hi default link NvimDoubleQuote NvimStringQuote
+hi default link NvimDoubleQuotedBody NvimStringBody
+hi default link NvimDoubleQuotedEscape NvimStringSpecial
+
+hi default link NvimFigureBrace NvimInternalError
+hi default link NvimSingleQuotedUnknownEscape NvimInternalError
+
+hi default link NvimSpacing Normal
+
+" NvimInvalid groups:
+
+hi default link NvimInvalidSingleQuotedUnknownEscape NvimInternalError
+
+hi default link NvimInvalid Error
+
+hi default link NvimInvalidAssignment NvimInvalid
+hi default link NvimInvalidPlainAssignment NvimInvalidAssignment
+hi default link NvimInvalidAugmentedAssignment NvimInvalidAssignment
+hi default link NvimInvalidAssignmentWithAddition NvimInvalidAugmentedAssignment
+hi default link NvimInvalidAssignmentWithSubtraction NvimInvalidAugmentedAssignment
+hi default link NvimInvalidAssignmentWithConcatenation NvimInvalidAugmentedAssignment
+
+hi default link NvimInvalidOperator NvimInvalid
+
+hi default link NvimInvalidUnaryOperator NvimInvalidOperator
+hi default link NvimInvalidUnaryPlus NvimInvalidUnaryOperator
+hi default link NvimInvalidUnaryMinus NvimInvalidUnaryOperator
+hi default link NvimInvalidNot NvimInvalidUnaryOperator
+
+hi default link NvimInvalidBinaryOperator NvimInvalidOperator
+hi default link NvimInvalidComparison NvimInvalidBinaryOperator
+hi default link NvimInvalidComparisonModifier NvimInvalidComparison
+hi default link NvimInvalidBinaryPlus NvimInvalidBinaryOperator
+hi default link NvimInvalidBinaryMinus NvimInvalidBinaryOperator
+hi default link NvimInvalidConcat NvimInvalidBinaryOperator
+hi default link NvimInvalidConcatOrSubscript NvimInvalidConcat
+hi default link NvimInvalidOr NvimInvalidBinaryOperator
+hi default link NvimInvalidAnd NvimInvalidBinaryOperator
+hi default link NvimInvalidMultiplication NvimInvalidBinaryOperator
+hi default link NvimInvalidDivision NvimInvalidBinaryOperator
+hi default link NvimInvalidMod NvimInvalidBinaryOperator
+
+hi default link NvimInvalidTernary NvimInvalidOperator
+hi default link NvimInvalidTernaryColon NvimInvalidTernary
+
+hi default link NvimInvalidDelimiter NvimInvalid
+
+hi default link NvimInvalidParenthesis NvimInvalidDelimiter
+hi default link NvimInvalidLambda NvimInvalidParenthesis
+hi default link NvimInvalidNestingParenthesis NvimInvalidParenthesis
+hi default link NvimInvalidCallingParenthesis NvimInvalidParenthesis
+
+hi default link NvimInvalidSubscript NvimInvalidParenthesis
+hi default link NvimInvalidSubscriptBracket NvimInvalidSubscript
+hi default link NvimInvalidSubscriptColon NvimInvalidSubscript
+hi default link NvimInvalidCurly NvimInvalidSubscript
+
+hi default link NvimInvalidContainer NvimInvalidParenthesis
+hi default link NvimInvalidDict NvimInvalidContainer
+hi default link NvimInvalidList NvimInvalidContainer
+
+hi default link NvimInvalidValue NvimInvalid
+
+hi default link NvimInvalidIdentifier NvimInvalidValue
+hi default link NvimInvalidIdentifierScope NvimInvalidIdentifier
+hi default link NvimInvalidIdentifierScopeDelimiter NvimInvalidIdentifier
+hi default link NvimInvalidIdentifierName NvimInvalidIdentifier
+hi default link NvimInvalidIdentifierKey NvimInvalidIdentifier
+
+hi default link NvimInvalidColon NvimInvalidDelimiter
+hi default link NvimInvalidComma NvimInvalidDelimiter
+hi default link NvimInvalidArrow NvimInvalidDelimiter
+
+hi default link NvimInvalidRegister NvimInvalidValue
+hi default link NvimInvalidNumber NvimInvalidValue
+hi default link NvimInvalidFloat NvimInvalidNumber
+hi default link NvimInvalidNumberPrefix NvimInvalidNumber
+
+hi default link NvimInvalidOptionSigil NvimInvalidIdentifier
+hi default link NvimInvalidOptionName NvimInvalidIdentifier
+hi default link NvimInvalidOptionScope NvimInvalidIdentifierScope
+hi default link NvimInvalidOptionScopeDelimiter NvimInvalidIdentifierScopeDelimiter
+
+hi default link NvimInvalidEnvironmentSigil NvimInvalidOptionSigil
+hi default link NvimInvalidEnvironmentName NvimInvalidIdentifier
+
+" Invalid string bodies and specials are still highlighted as valid ones to
+" minimize the red area.
+hi default link NvimInvalidString NvimInvalidValue
+hi default link NvimInvalidStringBody NvimStringBody
+hi default link NvimInvalidStringQuote NvimInvalidString
+hi default link NvimInvalidStringSpecial NvimStringSpecial
+
+hi default link NvimInvalidSingleQuote NvimInvalidStringQuote
+hi default link NvimInvalidSingleQuotedBody NvimInvalidStringBody
+hi default link NvimInvalidSingleQuotedQuote NvimInvalidStringSpecial
+
+hi default link NvimInvalidDoubleQuote NvimInvalidStringQuote
+hi default link NvimInvalidDoubleQuotedBody NvimInvalidStringBody
+hi default link NvimInvalidDoubleQuotedEscape NvimInvalidStringSpecial
+hi default link NvimInvalidDoubleQuotedUnknownEscape NvimInvalidValue
+
+hi default link NvimInvalidFigureBrace NvimInvalidDelimiter
+
+hi default link NvimInvalidSpacing ErrorMsg
+
+hi default link NvimDoubleQuotedUnknownEscape NvimInvalidValue
