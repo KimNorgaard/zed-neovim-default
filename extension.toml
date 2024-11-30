@@ -4,4 +4,4 @@ version = "0.1.0"
 schema_version = 1
 authors = ["Kim Nørgaard"]
 description = "A port of the default Neovim themes"
-repository = "https://github.com/KimNorgaard/zed-neovim-default.zed"
+repository = "https://github.com/KimNorgaard/zed-neovim-default.git"
