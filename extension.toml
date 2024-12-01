@@ -1,6 +1,6 @@
 id = "neovim-default"
 name = "Neovim default themes"
-version = "0.1.0"
+version = "0.2.0"
 schema_version = 1
 authors = ["Kim Nørgaard"]
 description = "A port of the default Neovim themes"
