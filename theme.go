@@ -2,11 +2,11 @@ package main
 
 import "zed-neovim/zed"
 
-func addTheme(theme *zed.Theme, name string, appearance zed.AppearanceContent, style zed.ThemeStyleContent) {
+func addTheme(theme *zed.Theme, name string, appearance zed.AppearanceContent, style *zed.ThemeStyleContent) {
 	theme.Themes = append(theme.Themes, zed.ThemeContent{
 		Name:       name,
 		Appearance: appearance,
-		Style:      style,
+		Style:      *style,
 	})
 }
 

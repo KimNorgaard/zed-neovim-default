@@ -7,7 +7,7 @@ type Theme struct {
 	*V010Json
 }
 
-func NewTheme(name string, author string) *Theme {
+func NewTheme(name, author string) *Theme {
 	theme := &Theme{
 		Schema: "https://zed.dev/schema/themes/v0.1.0.json",
 		V010Json: &V010Json{

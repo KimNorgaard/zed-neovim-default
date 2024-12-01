@@ -159,11 +159,16 @@ func main() {
 	// 	fmt.Printf("%s: %s %s %s %d %v\n", color.Name, color.Foreground, color.Background, color.Special, color.Blend, color.Attr)
 	// }
 
+	darkColorsZedStyle := toZedStyle(darkColors)
+	lightColorsZedStyle := toZedStyle(lightColors)
+	darkColorsAccentedZedStyle := toZedStyle(darkColorsAccented)
+	lightColorsAccentedZedStyle := toZedStyle(lightColorsAccented)
+
 	theme := zed.NewTheme("Neovim default", "Kim Nørgaard")
-	addTheme(theme, "Neovim default dark", zed.AppearanceContentDark, toZedStyle(darkColors))
-	addTheme(theme, "Neovim default light", zed.AppearanceContentLight, toZedStyle(lightColors))
-	addTheme(theme, "Neovim default accented dark", zed.AppearanceContentDark, toZedStyle(darkColorsAccented))
-	addTheme(theme, "Neovim default accented light", zed.AppearanceContentLight, toZedStyle(lightColorsAccented))
+	addTheme(theme, "Neovim default dark", zed.AppearanceContentDark, &darkColorsZedStyle)
+	addTheme(theme, "Neovim default light", zed.AppearanceContentLight, &lightColorsZedStyle)
+	addTheme(theme, "Neovim default accented dark", zed.AppearanceContentDark, &darkColorsAccentedZedStyle)
+	addTheme(theme, "Neovim default accented light", zed.AppearanceContentLight, &lightColorsAccentedZedStyle)
 
 	if data, err := zed.MarshalJSON(theme); err == nil {
 		fmt.Println(string(data))

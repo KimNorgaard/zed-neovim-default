@@ -8,6 +8,12 @@ import (
 	"strings"
 )
 
+const (
+	DefaultToken = "default"
+	LinkToken    = "link"
+	NoneToken    = "NONE"
+)
+
 type HlGroups map[string]HlGroup
 
 type HlGroup struct {
@@ -90,7 +96,7 @@ func ParseHlGroup(hlCmd string) (HlGroup, error) {
 		return hlGroup, nil
 	}
 	// invalid - link must follow default
-	if tokens[0] == "default" && tokens[1] != "link" {
+	if tokens[0] == DefaultToken && tokens[1] != LinkToken {
 		// TODO: normal groups can have a default
 		return hlGroup, nil
 	}
@@ -100,7 +106,7 @@ func ParseHlGroup(hlCmd string) (HlGroup, error) {
 
 	// Handle links
 	var idx int
-	if tokens[0] == "default" && tokens[1] == "link" {
+	if tokens[0] == DefaultToken && tokens[1] == LinkToken {
 		hlGroup.IsLink = true
 		hlGroup.IsDefault = true
 		if len(tokens) != 4 {
@@ -108,7 +114,7 @@ func ParseHlGroup(hlCmd string) (HlGroup, error) {
 			return hlGroup, nil
 		}
 		idx = 2
-	} else if tokens[0] == "link" {
+	} else if tokens[0] == LinkToken {
 		hlGroup.IsLink = true
 		if len(tokens) != 3 {
 			slog.Warn("Invalid default link", slog.Any("line", hlCmd))
@@ -117,7 +123,7 @@ func ParseHlGroup(hlCmd string) (HlGroup, error) {
 		idx = 1
 	}
 	if hlGroup.IsLink {
-		if tokens[:len(tokens)-1][0] == "NONE" {
+		if tokens[:len(tokens)-1][0] == NoneToken {
 			return hlGroup, nil
 		}
 
@@ -134,7 +140,7 @@ func ParseHlGroup(hlCmd string) (HlGroup, error) {
 		slog.Warn("Invalid group", slog.Any("line", hlCmd))
 		return hlGroup, nil
 	}
-	if tokens[1] == "NONE" {
+	if tokens[1] == NoneToken {
 		return hlGroup, nil
 	}
 
