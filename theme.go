@@ -26,14 +26,14 @@ func toZedStyle(colors map[string]Color) zed.ThemeStyleContent {
 	style.BorderVariant = ptr(colors["Pmenu"].Background)
 	style.BorderDisabled = ptr(colors["PmenuThumb"].Foreground + Opacity70)
 	style.Conflict = ptr(colors["WarningMsg"].Foreground)
-	// style.ConflictBackground = ptr(colors["Error"].Background)
-	// style.ConflictBorder = ptr(colors["Error"].Foreground)
+	style.ConflictBackground = ptr(colors["Pmenu"].Background)
+	style.ConflictBorder = ptr(colors["WarningMsg"].Foreground)
 	style.Created = ptr(colors["DiagnosticOk"].Foreground)
-	// style.CreatedBackground = ptr(colors["Normal"].Background)
-	// style.CreatedBorder = ptr(colors["Constant"].Foreground)
+	style.CreatedBackground = ptr(colors["Pmenu"].Background)
+	style.CreatedBorder = ptr(colors["DiagnosticOk"].Foreground)
 	style.Deleted = ptr(colors["ErrorMsg"].Foreground)
-	// style.DeletedBackground = ptr(colors["Normal"].Background)
-	// style.DeletedBorder = ptr(colors["Normal"].Foreground)
+	style.DeletedBackground = ptr(colors["Pmenu"].Background)
+	style.DeletedBorder = ptr(colors["ErrorMsg"].Foreground)
 	style.DropTargetBackground = ptr(colors["NonText"].Foreground + Opacity80)
 	style.EditorActiveLineNumber = ptr(colors["Normal"].Foreground)
 	style.EditorBackground = ptr(colors["Normal"].Background)
@@ -54,44 +54,43 @@ func toZedStyle(colors map[string]Color) zed.ThemeStyleContent {
 	style.ElementSelected = ptr(colors["PmenuThumb"].Background)
 	style.ElevatedSurfaceBackground = ptr(colors["Normal"].Background)
 	style.Error = ptr(colors["ErrorMsg"].Foreground)
-	// style.ErrorBackground = ptr(colors["Normal"].Background)
-	// style.ErrorBorder = ptr(colors["Error"].Foreground)
+	style.ErrorBackground = ptr(colors["Pmenu"].Background)
+	style.ErrorBorder = ptr(colors["ErrorMsg"].Foreground)
 	style.GhostElementActive = ptr(colors["PmenuThumb"].Background)
 	style.GhostElementBackground = ptr("#00000000")
 	style.GhostElementDisabled = ptr(colors["Normal"].Background)
 	style.GhostElementHover = ptr(colors["Pmenu"].Background)
 	style.GhostElementSelected = ptr(colors["PmenuThumb"].Background)
 	style.Hidden = ptr(colors["Normal"].Foreground + Opacity70)
-	// style.HiddenBackground = ptr(colors["Normal"].Background)
-	// style.HiddenBorder = ptr(colors["Comment"].Foreground)
+	style.HiddenBackground = ptr(colors["Pmenu"].Background)
+	style.HiddenBorder = ptr(colors["Normal"].Foreground)
 	style.Hint = ptr(colors["PmenuThumb"].Background)
-	// style.HintBackground = ptr(colors["Comment"].Background)
-	// style.HintBorder = ptr(colors["Comment"].Foreground)
+	style.HintBackground = ptr(colors["Pmenu"].Background)
+	style.HintBorder = ptr(colors["PmenuThumb"].Foreground)
 	style.Icon = ptr(colors["Normal"].Foreground)
 	style.IconAccent = ptr(colors["Special"].Foreground)
 	style.IconDisabled = ptr(colors["Normal"].Foreground + Opacity70)
 	style.IconMuted = ptr(colors["Comment"].Foreground)
 	style.IconPlaceholder = ptr(colors["Comment"].Foreground)
 	style.Ignored = ptr(colors["Normal"].Foreground + Opacity70)
-	// style.IgnoredBackground = ptr(colors["Normal"].Background)
-	// style.IgnoredBorder = ptr(colors["Comment"].Foreground)
+	style.IgnoredBackground = ptr(colors["Pmenu"].Background)
+	style.IgnoredBorder = ptr(colors["Normal"].Foreground)
 	style.Info = ptr(colors["Special"].Foreground)
-	// style.InfoBackground = ptr(colors["Normal"].Background)
-	// style.InfoBorder = ptr(colors["Normal"].Foreground)
+	style.InfoBackground = ptr(colors["Pmenu"].Background)
+	style.InfoBorder = ptr(colors["Special"].Foreground)
 	style.LinkTextHover = ptr(colors["Special"].Foreground)
 	style.Modified = ptr(colors["WarningMsg"].Foreground)
-	// style.ModifiedBackground = ptr(colors["Normal"].Background)
-	// style.ModifiedBorder = ptr(colors["Normal"].Foreground)
-	// style.PaneFocusedBorder = ptr(colors["NonText"].Foreground)
+	style.ModifiedBackground = ptr(colors["Pmenu"].Background)
+	style.ModifiedBorder = ptr(colors["WarningMsg"].Foreground)
+	style.PaneFocusedBorder = nil
 	style.PanelBackground = ptr(colors["Normal"].Background)
-	// style.PanelBackground = ptr("#1f2127")
-	// style.PanelFocusedBorder = ptr(colors["NonText"].Foreground)
+	style.PanelFocusedBorder = nil
 	style.Predictive = ptr(colors["Comment"].Foreground)
-	// style.PredictiveBackground = ptr(colors["Normal"].Background)
-	// style.PredictiveBorder = ptr(colors["Comment"].Foreground)
+	style.PredictiveBackground = ptr(colors["Pmenu"].Background)
+	style.PredictiveBorder = ptr(colors["Comment"].Foreground)
 	style.Renamed = ptr(colors["Special"].Foreground)
-	// style.RenamedBackground = ptr(colors["Normal"].Background)
-	// style.RenamedBorder = ptr(colors["Identifier"].Foreground)
+	style.RenamedBackground = ptr(colors["Pmenu"].Background)
+	style.RenamedBorder = ptr(colors["Special"].Foreground)
 	style.ScrollbarThumbBorder = ptr(colors["Pmenu"].Background)
 	style.ScrollbarThumbBackground = ptr(colors["Pmenu"].Background + Opacity80)
 	style.ScrollbarThumbHoverBackground = ptr(colors["Pmenu"].Background)
@@ -100,8 +99,8 @@ func toZedStyle(colors map[string]Color) zed.ThemeStyleContent {
 	style.SearchMatchBackground = ptr(colors["Search"].Background)
 	style.StatusBarBackground = ptr(colors["Pmenu"].Background)
 	style.Success = ptr(colors["DiagnosticOk"].Foreground)
-	// style.SuccessBackground = ptr(colors["Normal"].Background)
-	// style.SuccessBorder = ptr(colors["Normal"].Foreground)
+	style.SuccessBackground = ptr(colors["Pmenu"].Background)
+	style.SuccessBorder = ptr(colors["DiagnosticOk"].Foreground)
 	style.SurfaceBackground = ptr(colors["Normal"].Background)
 	style.TabActiveBackground = ptr(colors["Normal"].Background)
 	style.TabInactiveBackground = ptr(colors["TabLine"].Background)
@@ -115,11 +114,11 @@ func toZedStyle(colors map[string]Color) zed.ThemeStyleContent {
 	style.TitleBarBackground = ptr(colors["Pmenu"].Background)
 	style.ToolbarBackground = ptr(colors["Normal"].Background)
 	style.Unreachable = ptr(colors["Comment"].Foreground)
-	// style.UnreachableBackground = ptr(colors["DiagnosticUnnecessary"].Background)
-	// style.UnreachableBorder = ptr(colors["DiagnosticUnnecessary"].Foreground)
+	style.UnreachableBackground = ptr(colors["Pmenu"].Background)
+	style.UnreachableBorder = ptr(colors["Comment"].Foreground)
 	style.Warning = ptr(colors["WarningMsg"].Foreground)
-	// style.WarningBackground = ptr(colors["WarningMsg"].Foreground)
-	// style.WarningBorder = ptr(colors["WarningMsg"].Foreground)
+	style.WarningBackground = ptr(colors["Pmenu"].Background)
+	style.WarningBorder = ptr(colors["WarningMsg"].Foreground)
 	style.Players = []zed.PlayerColorContent{
 		{
 			Background: ptr(colors["Normal"].Foreground),
@@ -149,7 +148,7 @@ func toZedStyle(colors map[string]Color) zed.ThemeStyleContent {
 			Color: ptr(colors["@constant"].Foreground),
 		},
 		"constant.builtin": {
-			Color: ptr(colors["Special"].Foreground),
+			Color: ptr(colors["zed.syntax.constant.builtin"].Foreground),
 		},
 		"constructor": {
 			Color: ptr(colors["@constructor"].Foreground),
@@ -193,8 +192,7 @@ func toZedStyle(colors map[string]Color) zed.ThemeStyleContent {
 			Color: ptr(colors["Macro"].Foreground),
 		},
 		"method": {
-			// Color: ptr(colors["@lsp.type.method"].Foreground),
-			Color: ptr(colors["@lsp.type.function"].Foreground),
+			Color: ptr(colors["zed.syntax.method"].Foreground),
 		},
 		"modifier": {
 			Color: ptr(colors["Operator"].Foreground),
@@ -218,8 +216,7 @@ func toZedStyle(colors map[string]Color) zed.ThemeStyleContent {
 			Color: ptr(colors["PreProc"].Foreground),
 		},
 		"property": {
-			// Color: ptr(colors["@lsp.type.property"].Foreground),
-			Color: ptr(colors["Identifier"].Foreground),
+			Color: ptr(colors["zed.syntax.property"].Foreground),
 		},
 		"punctuation": {
 			Color: ptr(colors["@punctuation"].Foreground),
@@ -264,16 +261,16 @@ func toZedStyle(colors map[string]Color) zed.ThemeStyleContent {
 			Color: ptr(colors["Title"].Foreground),
 		},
 		"type": {
-			// Color: ptr(colors["@lsp.type.type"].Foreground),
-			Color: ptr(colors["Special"].Foreground),
+			Color: ptr(colors["zed.syntax.type"].Foreground),
 		},
 		"type.builtin": {
-			// Color: ptr(colors["@lsp.type.type"].Foreground),
-			Color: ptr(colors["@type.builtin"].Foreground),
+			Color: ptr(colors["zed.syntax.type.builtin"].Foreground),
 		},
 		"variable": {
-			// Color: ptr(colors["@lsp.type.variable"].Foreground),
-			Color: ptr(colors["Identifier"].Foreground),
+			Color: ptr(colors["zed.syntax.variable"].Foreground),
+		},
+		"variable.member": {
+			Color: ptr(colors["zed.syntax.variable.member"].Foreground),
 		},
 		"variable.builtin": {
 			Color: ptr(colors["@variable.builtin"].Foreground),

@@ -113,10 +113,48 @@ func main() {
 	resolve(colorSchemes["dark"], palette, darkColors)
 	resolve(colorSchemes["both"], palette, darkColors)
 	resolve(colorSchemes["cmdline"], palette, darkColors)
+	darkColors["zed.syntax.constant.builtin"] = darkColors["@constant"]
+	darkColors["zed.syntax.method"] = darkColors["@lsp.type.method"]
+	darkColors["zed.syntax.property"] = darkColors["@lsp.type.property"]
+	darkColors["zed.syntax.type"] = darkColors["@lsp.type.type"]
+	darkColors["zed.syntax.type.builtin"] = darkColors["Special"]
+	darkColors["zed.syntax.variable"] = darkColors["@lsp.type.variable"]
+	darkColors["zed.syntax.variable.member"] = darkColors["@lsp.type.variable"]
+
 	lightColors := make(map[string]Color)
 	resolve(colorSchemes["light"], palette, lightColors)
 	resolve(colorSchemes["both"], palette, lightColors)
 	resolve(colorSchemes["cmdline"], palette, lightColors)
+	lightColors["zed.syntax.constant.builtin"] = lightColors["@constant"]
+	lightColors["zed.syntax.method"] = lightColors["@lsp.type.method"]
+	lightColors["zed.syntax.property"] = lightColors["@lsp.type.property"]
+	lightColors["zed.syntax.type"] = lightColors["@lsp.type.type"]
+	lightColors["zed.syntax.type.builtin"] = lightColors["Special"]
+	lightColors["zed.syntax.variable"] = lightColors["@lsp.type.variable"]
+	lightColors["zed.syntax.variable.member"] = lightColors["@lsp.type.variable"]
+
+	darkColorsAccented := make(map[string]Color)
+	for k := range darkColors {
+		darkColorsAccented[k] = darkColors[k]
+	}
+	darkColorsAccented["zed.syntax.constant.builtin"] = darkColors["Special"]
+	darkColorsAccented["zed.syntax.method"] = darkColors["@lsp.type.function"]
+	darkColorsAccented["zed.syntax.property"] = darkColors["Identifier"]
+	darkColorsAccented["zed.syntax.type"] = darkColors["Special"]
+	darkColorsAccented["zed.syntax.type.builtin"] = darkColors["Special"]
+	darkColorsAccented["zed.syntax.variable.member"] = darkColors["Identifier"]
+
+	lightColorsAccented := make(map[string]Color)
+	for k := range lightColors {
+		lightColorsAccented[k] = lightColors[k]
+	}
+	lightColorsAccented["zed.syntax.constant.builtin"] = lightColors["Special"]
+	lightColorsAccented["zed.syntax.method"] = lightColors["@lsp.type.function"]
+	lightColorsAccented["zed.syntax.property"] = lightColors["Identifier"]
+	lightColorsAccented["zed.syntax.type"] = lightColors["Special"]
+	lightColorsAccented["zed.syntax.type.builtin"] = lightColors["Special"]
+	lightColorsAccented["zed.syntax.variable.member"] = lightColors["Identifier"]
+
 	// for _, color := range colors {
 	// 	fmt.Printf("%s: %s %s %s %d %v\n", color.Name, color.Foreground, color.Background, color.Special, color.Blend, color.Attr)
 	// }
@@ -124,6 +162,8 @@ func main() {
 	theme := zed.NewTheme("Neovim default", "Kim Nørgaard")
 	addTheme(theme, "Neovim default dark", zed.AppearanceContentDark, toZedStyle(darkColors))
 	addTheme(theme, "Neovim default light", zed.AppearanceContentLight, toZedStyle(lightColors))
+	addTheme(theme, "Neovim default accented dark", zed.AppearanceContentDark, toZedStyle(darkColorsAccented))
+	addTheme(theme, "Neovim default accented light", zed.AppearanceContentLight, toZedStyle(lightColorsAccented))
 
 	if data, err := zed.MarshalJSON(theme); err == nil {
 		fmt.Println(string(data))
