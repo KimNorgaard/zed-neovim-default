@@ -33,8 +33,10 @@ opinionated.
 
 ### Install via Zed Extensions
 
-It's not currently available as an extension in Zed. There is an [open
-PR](https://github.com/zed-industries/extensions/pull/1733) to add it.
+1. Open Zed
+2. `cmd+shift+p` and select _zed: extensions_
+3. Select _Neovim default themes_ and Install
+4. Select the theme variant you want from the dropdown
 
 ### Install Manually
 
