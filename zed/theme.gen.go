@@ -517,7 +517,7 @@ type ThemeStyleContent struct {
 	ScrollbarTrackBorder *string `json:"scrollbar.track.border,omitempty" yaml:"scrollbar.track.border,omitempty" mapstructure:"scrollbar.track.border,omitempty"`
 
 	// The color of the scrollbar thumb.
-	ScrollbarThumbBackground *string `json:"scrollbar_thumb.background,omitempty" yaml:"scrollbar_thumb.background,omitempty" mapstructure:"scrollbar_thumb.background,omitempty"`
+	ScrollbarThumbBackground *string `json:"scrollbar.thumb.background,omitempty" yaml:"scrollbar.thumb.background,omitempty" mapstructure:"scrollbar.thumb.background,omitempty"`
 
 	// SearchMatchBackground corresponds to the JSON schema field
 	// "search.match_background".
